@@ -1,0 +1,23 @@
+--
+-- Title: note_payload.psql
+-- Description: note payload content, row for every note version
+-- Development Environment: PostGre SQL 13.5
+--
+create table note_payload (
+  id              bigserial      primary key,
+  created_at      timestamptz    not null default CURRENT_TIMESTAMP,
+  created_by      varchar(48)    not null,
+  last_viewed_at  timestamptz    not null default CURRENT_TIMESTAMP,
+  favorite_count  int            not null default 0,
+  view_count      int            not null default 0,
+  note_uuid       varchar(48)    not null,
+  version         smallint       not null,
+  message         varchar(4096)  not null
+);
+
+create unique index note_payload_version on note_payload(note_uuid, version);
+
+-- insert into note_payload(created_by_user, uuid, message) values('b105fe8b-1505-45a7-8e53-f98ec45f5479', '3f4d9388-d8ad-4386-aab9-a035a313da74', 'default message');
+
+grant select, insert, update on note_payload to turtle_go;
+grant usage, select on sequence note_payload_id_seq to turtle_go;
