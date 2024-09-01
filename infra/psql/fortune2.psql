@@ -1,0 +1,18 @@
+--
+-- Title: fortune.psql
+-- Description: fortune
+-- Development Environment: PostGre SQL 13.5
+--
+create table komodo_fortune (
+  id           bigserial      primary key,
+  eval_flag    boolean        not null default false,
+  reject_flag  boolean        not null default false,
+  mask         int            not null default 0,
+  uuid         varchar(48)    not null,
+  message      varchar(4096)  not null
+);
+
+insert into fortune(uuid, message) values('b105fe8b-1505-45a7-8e53-f98ec45f5479', 'default message');
+
+grant select, insert, update on fortune to komodo_ops;
+grant usage, select on sequence fortune_id_seq to komodo_ops;
