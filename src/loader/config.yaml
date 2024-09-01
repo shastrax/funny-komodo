@@ -1,0 +1,6 @@
+# database connection
+db_conn: "postgresql+psycopg2://komodo_ops:komodoxxx@localhost:5432/komodo_v1"
+#
+#raw_file: "/Users/gsc/go/src/github.com/shastrax/funny-turtle/fortune/raw/freebsd.raw"
+raw_file: "/Users/gsc/go/src/github.com/shastrax/funny-turtle/fortune/raw/plan9.raw"
+#

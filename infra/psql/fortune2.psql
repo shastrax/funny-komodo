@@ -3,7 +3,7 @@
 -- Description: fortune
 -- Development Environment: PostGre SQL 13.5
 --
-create table fortune (
+create table komodo_fortune (
   id           bigserial      primary key,
   eval_flag    boolean        not null default false,
   reject_flag  boolean        not null default false,

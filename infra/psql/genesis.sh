@@ -21,3 +21,10 @@ alter role komodo_admin with superuser createrole createdb;
 #
 # psql -U komodo_admin -d komodo_v1 -h localhost
 #
+create role komodo_ops with login;
+alter role komodo_ops with password 'komodoxxx';
+#
+grant all privileges on database komodo_v1 to komodo_ops;
+#
+# psql -U komodo_ops -d komodo_v1 -h localhost
+#

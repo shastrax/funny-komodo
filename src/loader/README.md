@@ -1,0 +1,1 @@
+load raw fortune files into postgresql
