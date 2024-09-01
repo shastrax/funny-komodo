@@ -22,12 +22,14 @@ class Fortune(Base):
 
     id = Column(Integer, primary_key=True)
     eval_flag = Column(Boolean)
+    reject_flag = Column(Boolean)
     mask = Column(Integer)
     uuid = Column(String)
     message = Column(String)
 
-    def __init__(self, eval_flag, mask, uuid, message):
+    def __init__(self, eval_flag, reject_flag, mask, uuid, message):
         self.eval_flag = eval_flag
+        self.reject_flag = reject_flag    
         self.mask = mask
         self.uuid = uuid
         self.message = message

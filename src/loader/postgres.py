@@ -21,7 +21,7 @@ class PostGres:
     def fortune_insert(self, uuid: str, message: str) -> Fortune:
         """fortune row insert"""
 
-        candidate = Fortune(False, 0, uuid, message)
+        candidate = Fortune(False, False, 0, uuid, message)
 
         session = self.Session()
         session.add(candidate)
